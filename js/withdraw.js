@@ -2,7 +2,7 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     const withdrawField = document.getElementById('withdraw-field');
     const newWithDrawAmountString = withdrawField.value;
     const newWithdrawAmount = parseFloat(newWithDrawAmountString);
-
+    withdrawField.value = '';
     if (isNaN(newWithdrawAmount) || newWithdrawAmount < 0) {
         alert('Please provide a valid number');
         return;
@@ -12,6 +12,7 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     const previousBalanceTotal = parseFloat(previousBalanceTotalString);
     if (newWithdrawAmount > previousBalanceTotal) {
         alert('Insufficient Balance');
+
         return;
     }
     const withdrawTotalElement = document.getElementById('withdraw-total');
@@ -27,5 +28,5 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
     balanceTotalElement.innerText = newBalanceTotal;
 
-    withdrawField.value = '';
+
 })
