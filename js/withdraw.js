@@ -3,7 +3,7 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     const newWithDrawAmountString = withdrawField.value;
     const newWithdrawAmount = parseFloat(newWithDrawAmountString);
 
-    if (isNaN(newWithdrawAmount)) {
+    if (isNaN(newWithdrawAmount) || newWithdrawAmount < 0) {
         alert('Please provide a valid number');
         return;
     }
