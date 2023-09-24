@@ -7,8 +7,8 @@ document.getElementById('btn-login').addEventListener('click', function () {
     const pass = passFild.value;
     // check email and password
     if (email == 'ab@gb.com' && pass == '121') {
-        window.location.href = 'banking.html';
+        window.location.href = 'dashboard.html';
     } else {
-        alert('Wrong!!')
+        alert('Invalid!!')
     }
 })
